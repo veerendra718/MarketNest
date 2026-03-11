@@ -1,0 +1,234 @@
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+}
+
+.title {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: var(--text-primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+
+.input,
+.select,
+.textarea {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all var(--transition);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+    background: var(--bg-primary);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.helpText {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.fileInput {
+    cursor: pointer;
+}
+
+.fileInput:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.imagePreviews {
+    background: var(--bg-secondary);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    margin-top: 8px;
+}
+
+.previewTitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.previewsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 12px;
+}
+
+.previewItem,
+.imageItem {
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.previewItem img,
+.imageItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.removeBtn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: var(--error);
+    color: #fff;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all var(--transition);
+}
+
+.removeBtn:hover {
+    background: #C0392B;
+    transform: scale(1.1);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.submitBtn {
+    flex: 1;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    border: none;
+    color: #fff;
+    padding: 14px 20px;
+    margin-right: 20px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(225, 112, 85, 0.3);
+}
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cancelBtn {
+    flex: 1;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    color: var(--text-secondary);
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    letter-spacing: 0.02em;
+}
+
+.cancelBtn:hover {
+    background: var(--surface-2);        /* subtle gray fill — neutral */
+    border-color: var(--text-secondary); /* border darkens slightly */
+    color: var(--text);                  /* text gets darker */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cancelBtn:active {
+    transform: translateY(0px);          /* press down feel */
+    box-shadow: none;
+    background: var(--surface-2);
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .submitBtn,
+    .cancelBtn {
+        width: 100%;
+    }
+}

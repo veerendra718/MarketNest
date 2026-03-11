@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ────────────────── Reset & Base ────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Modern Fashion Marketplace Colors */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F9F9F9;
+    --bg-tertiary: #F0F0F0;
+    --bg-card: #FFFFFF;
+    --bg-input: #F5F5F5;
+    --border: #E0E0E0;
+    --border-light: #F0F0F0;
+    --border-focus: rgba(225, 112, 85, 0.3);
+    
+    /* Text Colors */
+    --text-primary: #1A1A1A;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --text-light: #B3B3B3;
+    
+    /* Accent Colors */
+    --accent: #E17055;
+    --accent-hover: #D25A42;
+    --accent-light: #FFF2E8;
+    --accent-glow: rgba(225, 112, 85, 0.08);
+    
+    /* Secondary Accent */
+    --secondary: #2C3E50;
+    --secondary-hover: #1A2332;
+    --secondary-light: #E8F4F8;
+    
+    /* Status Colors */
+    --success: #27AE60;
+    --error: #E74C3C;
+    --warning: #F39C12;
+    --info: #3498DB;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.12);
+    
+    /* Spacing & Radius */
+    --radius: 8px;
+    --radius-sm: 6px;
+    --radius-lg: 12px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+input, textarea, select {
+    font-family: inherit;
+}
+
+/* ────────────────── Animations ────────────────── */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ────────────────── Typography ────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 32px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+/* ────────────────── Responsive ────────────────── */
+@media (max-width: 768px) {
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 20px; }
+}

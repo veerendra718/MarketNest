@@ -1,0 +1,183 @@
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    min-width: 140px;
+    transition: transform var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+    flex: 1;
+    align-items: center;
+}
+
+.navLink {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color var(--transition);
+    white-space: nowrap;
+}
+
+.navLink:hover,
+.navLink.active {
+    color: var(--accent);
+}
+
+.navLinkBtn {
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    font-weight: 600;
+    transition: all var(--transition);
+}
+
+.navLinkBtn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(225, 112, 85, 0.2);
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.userName {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.userRole {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.logoutBtn {
+    background: transparent;
+    border: 1.5px solid rgba(231, 76, 60, 0.4);  /* soft red border by default */
+    color: #e74c3c;                                /* red text by default */
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    opacity: 0.85;
+}
+
+.logoutBtn:hover {
+    background: #e74c3c;           /* solid red fill on hover */
+    border-color: #e74c3c;
+    color: #ffffff;                /* white text on hover */
+    opacity: 1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);  /* red glow */
+}
+
+.logoutBtn:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+.authLinks {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.mobileMenu {
+    display: none;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mobileMenu a,
+.mobileMenu button {
+    padding: 12px;
+    text-align: left;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all var(--transition);
+}
+
+.mobileMenu a:hover,
+.mobileMenu button:hover {
+    background: var(--bg-input);
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .menuToggle {
+        display: block;
+    }
+
+    .userInfo {
+        display: none;
+    }
+}
