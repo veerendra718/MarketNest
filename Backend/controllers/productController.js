@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 
 const createProduct = asyncHandler(async (req, res) => {
   const { name, description, category, status } = req.body;
-  const price = Number(req.body.price);
+  const price = Math.round(Number(req.body.price));
 
   if (!name || !description || !price || !category) {
     return res.status(400).json({ message: "All fields are required" });
@@ -36,7 +36,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 
   if (name) product.name = name;
   if (description) product.description = description;
-  if (price) product.price = price;
+  if (price) product.price = Math.round(Number(price));
   if (category) product.category = category;
   if (status) product.status = status;
 
