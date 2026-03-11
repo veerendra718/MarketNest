@@ -24,6 +24,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+    res.json({
+        message: 'MarketNest API is running',
+    });
+});
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/products', productRoutes);
 
