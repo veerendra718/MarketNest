@@ -91,7 +91,7 @@ MarketNest implements a **dual-token JWT strategy** with automatic silent refres
 **Key implementation details:**
 
 1. **Access Token** — Short-lived (15 min), stored in `localStorage`, sent via `Authorization: Bearer` header. Contains `userId` and `role` in payload.
-2. **Refresh Token** — Long-lived (7 days), stored as `httpOnly`, `secure`, `sameSite: strict` cookie. Contains only `userId`. Also stored in the database for server-side validation and revocation.
+2. **Refresh Token** — Long-lived (7 days), stored as `httpOnly`, `secure`, `sameSite: none` cookie. Contains only `userId`. Also stored in the database for server-side validation and revocation.
 3. **Token Rotation** — On every refresh, both access and refresh tokens are regenerated and the old refresh token is replaced in the database, preventing replay attacks.
 4. **Silent Refresh** — The Axios response interceptor automatically detects 401 errors, calls the `/auth/refresh` endpoint, and retries the original request with the new access token — invisible to the user.
 5. **Logout** — Clears the refresh token from both the database and the cookie, and removes `localStorage` entries on the client.
@@ -162,7 +162,7 @@ MarketNest/
 
 | Decision | Rationale |
 |---|---|
-| **Refresh token in httpOnly cookie** | Prevents JavaScript access, mitigating XSS-based token theft. The `secure` flag ensures HTTPS-only transmission, and `sameSite: strict` prevents CSRF attacks. |
+| **Refresh token in httpOnly cookie** | Prevents JavaScript access, mitigating XSS-based token theft. The `secure` flag ensures HTTPS-only transmission, and `sameSite: none` enables cross-origin cookie delivery between the frontend and backend domains. |
 | **Short-lived access tokens (15 min)** | Limits the damage window if an access token is compromised. Combined with automatic silent refresh, this provides seamless UX without exposing long-lived tokens. |
 | **Refresh token rotation** | Every refresh generates a new refresh token and stores it in the database, invalidating the previous one. This prevents replay attacks with stolen refresh tokens. |
 | **Server-side refresh token validation** | The refresh token is verified against the database record, enabling server-side revocation on logout or security events. |
@@ -216,7 +216,7 @@ MarketNest/
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/MarketNest.git
+git clone https://github.com/veerendra718/MarketNest.git
 cd MarketNest
 
 # Install backend dependencies
