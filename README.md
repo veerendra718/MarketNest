@@ -289,9 +289,8 @@ NODE_ENV=development
 
 AI coding assistants were used during development for:
 
-- **Code scaffolding** — Generating initial boilerplate for React components, Express routes, and Mongoose schemas.
 - **Debugging** — Identifying issues such as environment variable load-order problems and async error handling patterns.
 - **Best practices** — Reviewing authentication flow implementation (token rotation, cookie security flags) and suggesting security improvements.
 - **Documentation** — Assisting with README structure and content organization.
 
-All AI-generated code was reviewed, understood, and adapted to fit the specific project requirements. No code was blindly copied without comprehension.
+All AI-generated code was reviewed, understood, and adapted to fit the specific project requirements.
