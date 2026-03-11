@@ -3,8 +3,8 @@
 A full-stack fashion marketplace built with the MERN stack (MongoDB, Express.js, React.js, Node.js) supporting two user roles — **Brand** (Seller) and **Customer** (User).
 
 **Live Links:**  
-- Frontend: _[Add deployed URL here]_  
-- Backend: _[Add deployed URL here]_
+- Frontend: https://marketnest-frontend.vercel.app
+- Backend: https://marketnest-backend-ou7y.onrender.com
 
 ---
 
