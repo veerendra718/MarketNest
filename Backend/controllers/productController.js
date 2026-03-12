@@ -66,7 +66,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
 // ── GET MARKETPLACE (Customer) ──
 const getMarketplace = asyncHandler(async (req, res) => {
-  const { search, category, page = 1, limit = 12 } = req.query;
+  const { search, category, page = 1, limit = 10 } = req.query;
 
   const filter = {
     isDeleted: false,
