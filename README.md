@@ -242,7 +242,7 @@ npm install
 
 ```bash
 # Start the backend (from Backend/)
-npm start        # or: npm run dev (with nodemon)
+npm start
 
 # Start the frontend (from Frontend/)
 npm run dev
