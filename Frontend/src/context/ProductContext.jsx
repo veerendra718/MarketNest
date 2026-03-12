@@ -23,7 +23,7 @@ export const ProductProvider = ({ children }) => {
       setLoading(true);
       setError(null);
       try {
-        const params = { page, limit: 12 };
+        const params = { page, limit: 10 };
         if (search) params.search = search;
         if (category && category !== "All Categories")
           params.category = category;
