@@ -6,6 +6,16 @@ A full-stack fashion marketplace built with the MERN stack (MongoDB, Express.js,
 - Frontend: https://marketnest-frontend.vercel.app
 - Backend: https://marketnest-backend-ou7y.onrender.com
 
+## Demo Credentials
+
+Brand Account
+Email: puma@gmail.com  
+Password: puma123
+
+Customer Account
+Email: harish@gmail.com  
+Password: harish123
+
 ---
 
 ## Table of Contents
@@ -189,7 +199,7 @@ MarketNest/
 - View detailed product pages with image gallery
 - Search products by name (server-side regex)
 - Filter by category (Topwear, Bottomwear, Footwear, Accessories, Winterwear)
-- Server-side paginated results (12 per page)
+- Server-side paginated results (10 per page)
 
 ---
 
@@ -294,3 +304,14 @@ AI coding assistants were used during development for:
 - **Documentation** — Assisting with README structure and content organization.
 
 All AI-generated code was reviewed, understood, and adapted to fit the specific project requirements.
+
+## Screenshots
+
+### Marketplace
+![Marketplace](./Screenshots/MarketNestMarketPlace.png)
+
+### Brand Dashboard
+![Dashboard](./Screenshots/MarketNestBrandDashboard.png)
+
+### Create Product
+![Create Product](./Screenshots/MarketNestCreateProduct.png)
