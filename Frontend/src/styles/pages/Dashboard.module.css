@@ -189,17 +189,17 @@
     letter-spacing: 0.02em;
 }
 
-/* ── Edit Button ────────────────────────── */
+/*  Edit Button  */
 .editBtn {
     color: var(--accent);
-    border-color: rgba(201, 168, 76, 0.5);   /* softer border by default */
+    border-color: rgba(201, 168, 76, 0.5);   /* softer border */
     background: rgba(201, 168, 76, 0.04);    /* barely visible gold tint */
 }
 
 .editBtn:hover {
-    background: var(--accent);               /* solid gold fill */
+    background: var(--accent);           /* solid gold fill */
     border-color: var(--accent);
-    color: var(--primary);                   /* dark text on gold */
+    color: var(--primary);               /* dark text on gold */
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
 }
@@ -209,7 +209,7 @@
     box-shadow: none;
 }
 
-/* ── Delete Button ──────────────────────── */
+/*  Delete Button  */
 .deleteBtn {
     color: #e74c3c;
     border-color: rgba(231, 76, 60, 0.4);    /* softer red border */
@@ -217,9 +217,9 @@
 }
 
 .deleteBtn:hover {
-    background: #e74c3c;                     /* solid red fill */
+    background: #e74c3c;              /* solid red fill */
     border-color: #e74c3c;
-    color: #ffffff;                          /* white text on red */
+    color: #ffffff;                   /* white text on red */
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }

@@ -60,7 +60,7 @@ export const ProductProvider = ({ children }) => {
     }
   }, []);
 
-  // Fetch user's products (brand)
+  // Fetch products Brand
   const getMyProducts = useCallback(async () => {
     setLoading(true);
     setError(null);
