@@ -11,7 +11,6 @@ const createProduct = asyncHandler(async (req, res) => {
 
   const images = req.files ? req.files.map((file) => file.path) : [];
 
-
   const product = await Product.create({
     brand: req.user.userId,
     name,
@@ -64,7 +63,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Product deleted successfully" });
 });
 
-// ── GET MARKETPLACE (Customer) ──
+//  GET MARKETPLACE (Customer)
 const getMarketplace = asyncHandler(async (req, res) => {
   const { search, category, page = 1, limit = 10 } = req.query;
 
@@ -96,7 +95,7 @@ const getMarketplace = asyncHandler(async (req, res) => {
   });
 });
 
-// ── GET SINGLE PRODUCT ──
+// GET SINGLE PRODUCT
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findOne({
     _id: req.params.id,
@@ -108,7 +107,7 @@ const getProductById = asyncHandler(async (req, res) => {
   res.status(200).json({ product });
 });
 
-// ── GET MY PRODUCTS (Brand) ──
+// GET MY PRODUCTS BRAND
 const getMyProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({
     brand: req.user.userId,
@@ -118,7 +117,7 @@ const getMyProducts = asyncHandler(async (req, res) => {
   res.status(200).json({ products });
 });
 
-// ── GET DASHBOARD STATS (Brand) ──
+// GET BRAND DASHBOARD STATS
 const getDashboardStats = asyncHandler(async (req, res) => {
   const brandId = req.user.userId;
 

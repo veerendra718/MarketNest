@@ -40,7 +40,7 @@ MarketNest follows a **client-server** architecture with clear separation of con
 ```
 ┌─────────────────┐         ┌─────────────────────────────────┐        ┌───────────┐
 │   React (Vite)  │ ──API──▶│  Express.js REST API            │ ──────▶│  MongoDB  │
-│   Port 5173     │◀────────│  Port 3000                      │◀───── │  Atlas    │
+│     vercel      │◀────────│     Render                      │◀───── │  Atlas    │
 └─────────────────┘         │  ┌───────────┐ ┌──────────────┐ │        └───────────┘
                             │  │ Middleware │ │ Controllers  │ │
                             │  │ (Auth,Role)│ │ (Auth,Prod.) │ │        ┌───────────┐
@@ -264,9 +264,15 @@ REFRESH_SECRET=<your-refresh-token-secret>
 CLOUDINARY_CLOUD_NAME=<your-cloud-name>
 CLOUDINARY_API_KEY=<your-api-key>
 CLOUDINARY_API_SECRET=<your-api-secret>
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=http://localhost:5173             #development
+CLIENT_URL=https://marketnest-frontend.vercel.app           #production
 NODE_ENV=development
 ```
+
+# Frontend (.env in Frontend/ folder)
+VITE_API_URL=http://localhost:3000/api/v1           # development
+VITE_API_URL=https://marketnest-backend-ou7y.onrender.com/api/v1  # production
+
 
 ---
 
